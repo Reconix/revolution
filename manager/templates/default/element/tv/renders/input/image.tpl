@@ -3,7 +3,7 @@
     {if $tv->value}<img src="{$_config.connectors_url}system/phpthumb.php?w=400&h=400&aoe=0&far=0&f=png&src={$tv->value}&source={$source}" alt="" />{/if}
 </div>
 {if $disabled}
-<script type="text/javascript">
+<script>
 // <![CDATA[
 {literal}
 Ext.onReady(function() {
@@ -22,7 +22,7 @@ Ext.onReady(function() {
 // ]]>
 </script>
 {else}
-<script type="text/javascript">
+<script>
 // <![CDATA[
 {literal}
 Ext.onReady(function() {
@@ -53,6 +53,12 @@ Ext.onReady(function() {
                 }
             }}
         }
+        ,validate: function () {
+            var value = Ext.getCmp('tv{/literal}{$tv->id}{literal}').value;
+            return !(!this.allowBlank && (value.length < 1));
+        }
+        ,markInvalid : Ext.emptyFn
+        ,clearInvalid : Ext.emptyFn
     });
     MODx.makeDroppable(Ext.get('tv-image-{/literal}{$tv->id}{literal}'),function(v) {
         var cb = Ext.getCmp('tvbrowser{/literal}{$tv->id}{literal}');
@@ -62,6 +68,7 @@ Ext.onReady(function() {
         }
         return '';
     });
+    Ext.getCmp('modx-panel-resource').getForm().add(fld{/literal}{$tv->id}{literal});
 });
 {/literal}
 // ]]>

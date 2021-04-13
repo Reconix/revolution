@@ -10,7 +10,7 @@ $_lang['area'] = 'Area';
 $_lang['area_authentication'] = 'Autenticazione e Sicurezza';
 $_lang['area_caching'] = 'Caching';
 $_lang['area_core'] = 'Codice Core';
-$_lang['area_editor'] = 'Rich-Text Editor';
+$_lang['area_editor'] = 'Editor di Testo Avanzato';
 $_lang['area_file'] = 'File System';
 $_lang['area_filter'] = 'Filtra per area...';
 $_lang['area_furls'] = 'URL Semplici (Friendly URL)';
@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Se impostata su "SI", le azioni (o le
 $_lang['setting_cache_alias_map'] = 'Abilita Context Alias Map Cache';
 $_lang['setting_cache_alias_map_desc'] = 'Quando abilitato, tutti gli URIs delle Risorse sono inseriti nella cache del Contesto. Abilitalo su siti pi&ugrave; piccoli e disabilitalo su siti pi&ugrave; grandi per avere prestazioni migliori.';
 
-$_lang['setting_use_context_resource_table'] = 'Utilizzare la tabella del contesto della risorsa';
-$_lang['setting_use_context_resource_table_desc'] = 'Quando attivata, gli aggiornamenti del contesto utilizzano la tabella context_resource. Ciò consente di avere in paniera programmatica, una risorsa in più contesti. Se non devi usare queste risorse in contesti multipli tramite API, puoi impostare falso. Su siti di grandi dimensioni miglioreranno le prestazioni del manager.';
+$_lang['setting_use_context_resource_table'] = 'Usa la tabella delle risorse contestuali per gli aggiornamenti della cache contestuale';
+$_lang['setting_use_context_resource_table_desc'] = 'Quando attivata, gli aggiornamenti del cache contesto utilizzano la tabella context_resource. Ciò consente di avere in paniera programmatica, una risorsa in più contesti. Se non devi usare queste risorse in contesti multipli tramite API, puoi impostare falso. Su siti di grandi dimensioni miglioreranno le prestazioni del manager.';
 
 $_lang['setting_cache_context_settings'] = 'Abilita Cache Impostazione dei Contesti';
 $_lang['setting_cache_context_settings_desc'] = 'Se impostata su "SI", le impostazioni dei contesti saranno inserite in cache per ridurre il tempo di caricamento.';
@@ -284,7 +284,7 @@ $_lang['setting_failed_login_attempts_desc'] = 'Il numero di tentativi errati di
 $_lang['setting_fe_editor_lang'] = 'Lingua Editor Front-end';
 $_lang['setting_fe_editor_lang_desc'] = 'Scegli una lingua da usare nell\'editor quando usato come editor front-end.';
 
-$_lang['setting_feed_modx_news'] = 'MODX News Feed URL';
+$_lang['setting_feed_modx_news'] = 'Feed Novita\' MODX';
 $_lang['setting_feed_modx_news_desc'] = 'Imposta l\'URL dei feed RSS per il pannello MODX News nel manager.';
 
 $_lang['setting_feed_modx_news_enabled'] = 'MODX News Feed Abilitati';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'La password per autenticatsi con SMTP.'
 $_lang['setting_mail_smtp_port'] = 'Porta SMTP';
 $_lang['setting_mail_smtp_port_desc'] = 'Imposta la porta di default del server SMTP.';
 
-$_lang['setting_mail_smtp_prefix'] = 'Prefisso Connessione SMTP';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Imposta il prefisso della connessione. Le Opzioni sono "", "ssl" or "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Invio Singolo A:';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Abilita l\'invio selettivo ai singoli destinatari "A:" delle mails, invece di inviare all\'intero elenco A: dei destinatari.';
@@ -665,7 +668,7 @@ $_lang['setting_session_cookie_path_desc'] = 'Con questa impostazione puoi perso
 $_lang['setting_session_cookie_secure'] = 'Sicurezza Cookie Sessione';
 $_lang['setting_session_cookie_secure_desc'] = 'Abilita questa opzione per usare cookies per sessioni sicure.';
 
-$_lang['setting_session_cookie_httponly'] = 'Session Cookie HttpOnly';
+$_lang['setting_session_cookie_httponly'] = 'Cookie Sessione HttpOnly';
 $_lang['setting_session_cookie_httponly_desc'] = 'Utilizza questa opzione per spuntare il flag HttpOnly sui cookies della sessione.';
 
 $_lang['setting_session_gc_maxlifetime'] = 'Durata Max sessione Garbage Collector';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Vuoi permettere ai tuoi utenti di cr
 $_lang['setting_unauthorized_page'] = 'Pagina Non Autorizzata';
 $_lang['setting_unauthorized_page_desc'] = 'Inserisci l\'ID della Risorsa che vuoi mostrare agli utenti se questi provano ad accedere a una pagina non autorizzata o di Sicurezza. <strong>NOTA: assicurati che questo ID appartenga a una Risorsa esistente, pubblicata e pubblicamente accessibile!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Specifica l\'ID di una Risorsa da mostare come pagina senza autorizzazione.';
+
+$_lang['setting_upload_check_exists'] = 'Controlla se il file caricato esiste';
+$_lang['setting_upload_check_exists_desc'] = 'Quando abilitato verrà mostrato un errore durante il caricamento di un file che esiste già con lo stesso nome. Se disabilitato, il file esistente verrà sostituito tranquillamente con il nuovo file.';
 
 $_lang['setting_upload_files'] = 'Tipi File Caricabili';
 $_lang['setting_upload_files_desc'] = 'Qui puoi inserire una lista di tipi di files che possono essere caricati dentro \'assets/files/\' tramite il Manager delle Risorse. Inserisci le estensioni per i tipi di files, separate da virgola.';

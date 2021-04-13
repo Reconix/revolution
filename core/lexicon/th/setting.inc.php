@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'เมื่อถูกเปิด�
 $_lang['setting_cache_alias_map'] = 'Enable Context Alias Map Cache';
 $_lang['setting_cache_alias_map_desc'] = 'When enabled, all Resource URIs are cached into the Context. Enable on smaller sites and disable on larger sites for better performance.';
 
-$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
-$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'เปิดการใช้งานแคชการตั้งค่าบริบท';
 $_lang['setting_cache_context_settings_desc'] = 'เมื่อถูกเปิดการใช้งาน การตั้งค่าบริบทจะเก็บแคชเพื่อลดระยะเวลาในการโหลด';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'รหัสผ่านที่รั
 $_lang['setting_mail_smtp_port'] = 'พอร์ต SMTP';
 $_lang['setting_mail_smtp_port_desc'] = 'ตั้งค่าปริยายให้กับพอร์ตของ SMTP เซิร์ฟเวอร์';
 
-$_lang['setting_mail_smtp_prefix'] = 'คำนำหน้าการเชื่อมต่อ SMTP';
-$_lang['setting_mail_smtp_prefix_desc'] = 'ตั้งคำนำหน้าการเชื่อมต่อ เหล่าตัวเลือกคือ "" "ssl" หรือ "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Single To';
 $_lang['setting_mail_smtp_single_to_desc'] = 'มีความสามารถในการมีฟิลด์"ถึง" ที่มีกระบวนการเฉพาะแต่ละอีเมล์ แทนที่การส่งถึงที่อยู่';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'คุณต้องการอน
 $_lang['setting_unauthorized_page'] = 'หน้าเว็บไซต์ไม่ได้รับอนุญาต';
 $_lang['setting_unauthorized_page_desc'] = 'ป้อนไอดีของรีซอร์สที่คุณต้องการนำผู้ใช้ไปถ้าพวกเขาร้องขอชมรีซอร์สที่ถูกรักษาความปลอดภัยหรือไม่อนุญาต <strong>หมายเหตุ: ตรวจสอบให้แน่ใจว่าไอดีที่คุณป้อนเป็นของรีซอร์สที่มีอยู่จริงและถูกเผยแพร่และสามารถเข้าชมได้โดยสาธารณะชนทั่วไป!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'กรุณาระบุไอดีของรีซอร์สสำหรับหน้าเว็บไซต์ไม่ได้รับอนุญาต';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'ประเภทไฟล์ที่สามารถอัปโหลดได้';
 $_lang['setting_upload_files_desc'] = 'คุณสามารถป้อนรายการของไฟล์ที่สามารถอัปโหลดไปยัง \'assets/files/\' โดยใช้ตัวจัดการรีซอร์ส กรุณาป้อนนามสกุลของประเภทไฟล์คั่นด้วยจุลภาค';

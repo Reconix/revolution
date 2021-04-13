@@ -82,10 +82,13 @@ MODx.combo.ComboBox = function(config,getStore) {
             ,remoteSort: config.remoteSort || false
             ,autoDestroy: true
             ,listeners: {
-                'loadexception': {fn: function(o,trans,resp) {
-                    var status = _('code') + ': ' + resp.status + ' ' + resp.statusText + '<br/>';
-                    MODx.msg.alert(_('error'), status + resp.responseText);
-                }}
+                loadexception: {
+                    fn: function (o, trans, resp) {
+                        var status = _('code') + ': ' + resp.status + ' ' + resp.statusText;
+                        var response = Ext.decode(resp.responseText || '[]');
+                        MODx.msg.alert(_('error'), (response.message || status));
+                    }
+                }
             }
         })
     });
@@ -106,6 +109,12 @@ MODx.combo.ComboBox = function(config,getStore) {
         // Workaround to let the combobox know the store is loaded (to help hide/display the pagination if required)
         this.fireEvent('loaded', this);
         this.loaded = true;
+
+        // Show the pagination panel if it didn't show up earlier
+        if (this.isExpanded() && this.pageSize < this.store.getTotalCount() && this.pageTb.hidden === true) {
+            this.collapse();
+            this.expand();
+        }
     }, this, {
         single: true
     });
@@ -135,6 +144,7 @@ Ext.extend(MODx.combo.ComboBox,Ext.form.ComboBox, {
             }
             if(this.pageSize < this.store.getTotalCount()){
                 this.assetHeight += this.footer.getHeight();
+                this.pageTb.show();
             } else {
                 this.list.setHeight(this.list.getHeight() - this.footer.getHeight());
                 this.pageTb.hide();

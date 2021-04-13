@@ -22,7 +22,7 @@ class SymlinkUpdateManagerController extends ResourceUpdateManagerController {
         $this->addJavascript($managerUrl.'assets/modext/sections/resource/update.js');
         $this->addJavascript($managerUrl.'assets/modext/sections/resource/symlink/update.js');
         $this->addHtml('
-        <script type="text/javascript">
+        <script>
         // <![CDATA[
         MODx.config.publish_document = "'.$this->canPublish.'";
         MODx.onDocFormRender = "'.$this->onDocFormRender.'";
@@ -45,12 +45,13 @@ class SymlinkUpdateManagerController extends ResourceUpdateManagerController {
                 ,show_tvs: '.(!empty($this->tvCounts) ? 1 : 0).'
             });
         });
+        MODx.perm.tree_show_resource_ids = '.($this->modx->hasPermission('tree_show_resource_ids') ? 1 : 0).';
         // ]]>
         </script>');
         /* load RTE */
         $this->loadRichTextEditor();
     }
-    
+
     /**
      * Return the location of the template file
      * @return string

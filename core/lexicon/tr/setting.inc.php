@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Etkinleştirildiği zaman, eylemler (
 $_lang['setting_cache_alias_map'] = 'Bağlam Rumuzu Harita Önbelleğini Etkinleştirme';
 $_lang['setting_cache_alias_map_desc'] = 'Etkinleştirildiğinde, tüm Kaynak URI\'leri Bağlam içine önbelleğe alınır. Daha küçük sitelerde etkinleştirin ve daha iyi performans için daha büyük sitelerde devre dışı bırakın.';
 
-$_lang['setting_use_context_resource_table'] = 'İçerik kaynak tablosunu kullan';
-$_lang['setting_use_context_resource_table_desc'] = 'Etkinleştirildiğinde, bağlam yenilemeleri, context_resource tablosunu kullanır. Bu, bir çok bağlamda programlı olarak bir kaynağa sahip olmanızı sağlar. Bu çoklu kaynak bağlamlarını API aracılığıyla kullanmazsanız, yanlış ayarlamalar yapabilirsiniz. Büyük sitelerde, potansiyel yöneticilerde performans artışı elde edersiniz.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Bağlam Ayarı önbelleğini etkinleştir';
 $_lang['setting_cache_context_settings_desc'] = 'Etkinleştirildiğinde, yükleme sürelerini azaltmak için içerik ayarları önbelleğe saklanır.';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'SMTP\'ye karşı doğrulama için parol
 $_lang['setting_mail_smtp_port'] = 'SMTP bağlantı noktası';
 $_lang['setting_mail_smtp_port_desc'] = 'Varsayılam SMTP sunucu bağlantı noktasını ayarlar.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP Bağlantısı Öneki';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Bağlantı önekini ayarlar. Seçenekler "", "ssl ya da "tls"dir';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Tek';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Tüm TO adreslere göndermek yerine, bireysel TO e-postaları işleme alan için yeteneği sağlar.';
@@ -772,6 +775,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Kullanıcılarınızın sitenin kök
 $_lang['setting_unauthorized_page'] = 'Yetkisiz sayfa';
 $_lang['setting_unauthorized_page_desc'] = 'Kullanıcılar, güvenli veya yetkisiz bir Kaynak talep ettiyse, göndermek istediğiniz Kaynak Kimliğini girin. <strong> NOT: Girdiğiniz kimliğin mevcut bir Kaynağa ait olduğundan ve yayınlandığından ve herkese açık olduğundan emin olun! </strong>';
 $_lang['setting_unauthorized_page_err'] = 'Yetkilendirilmemiş sayfa için lütfen bir kaynak ID belirleyin.';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Yüklenebilir Dosya Türleri';
 $_lang['setting_upload_files_desc'] = 'Buraya, Kaynak Yöneticisini kullanarak \'asset/files/\' içine yüklenebilecek dosyalar listesini girebilirsiniz. Lütfen dosya türü uzantılarını virgül ile ayırarak girin.';

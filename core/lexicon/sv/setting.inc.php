@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'När denna är aktiverad kommer händ
 $_lang['setting_cache_alias_map'] = 'Aktivera cachning av kontexts aliaskarta';
 $_lang['setting_cache_alias_map_desc'] = 'När denna är aktiverad cachas alla resurs-URI:er till kontexten. Aktivera på mindre webbplatser och inaktivera på större webbplatser för bättre prestande.';
 
-$_lang['setting_use_context_resource_table'] = 'Använd resurstabellen för kontexter';
-$_lang['setting_use_context_resource_table_desc'] = 'När denna är aktiverad kommer uppdateringar av kontexter att använda tabellen context_resource. Det här gör att du programmässigt kan ha en resurs i flera kontexter. Om du inte använder dessa resurskontexter via API:n så kan du sätta den här till false. På stora webbplatser kan du potentiellt få en prestandaökning i hanteraren då.';
+$_lang['setting_use_context_resource_table'] = 'Använd kontextresurstabellen för att uppdatera kontextcachen';
+$_lang['setting_use_context_resource_table_desc'] = 'När denna är aktiverad kommer uppdateringar av kontextcachen att använda tabellen context_resource. Det här gör att du programmässigt kan ha en resurs i flera kontexter. Om du inte använder dessa resurskontexter via API:n så kan du inaktivera den här. På stora webbplatser kan du då potentiellt få en prestandaökning i hanteraren.';
 
 $_lang['setting_cache_context_settings'] = 'Aktivera cachning av kontextinställningar';
 $_lang['setting_cache_context_settings_desc'] = 'När denna är aktiverad kommer kontextinställningar att cachas för att minska laddningstider.';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Lösenordet som ska användas för att 
 $_lang['setting_mail_smtp_port'] = 'SMTP-port';
 $_lang['setting_mail_smtp_port_desc'] = 'Anger SMTP-serverns standardport.';
 
-$_lang['setting_mail_smtp_prefix'] = 'Anslutningsprefix för SMTP';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Anger anslutningsprefixet. Möjliga värden är "", "ssl" eller "tls".';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP-kryptering';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Krypteringen av SMTP-anslutningen. Alternativen är "", "ssl" eller "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Anger om TLS-kryptering ska aktiveras automatiskt om en server stödjer det även om "SMTP-kryptering" inte är satt till "tls".';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP individuella meddelanden';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Ger möjligheten att låta till-fältet processas som individuella meddelanden istället för att sända till hela TO-adressen.';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Vill du tillåta dina användare att
 $_lang['setting_unauthorized_page'] = 'Otillåten-sida';
 $_lang['setting_unauthorized_page_desc'] = 'Ange ID till den resurs som du vill skicka användare till om de har frågat efter en säker eller otillåten resurs.<br /><strong>OBS: Se till att det ID du anger tillhör en existerande resurs, att den har blivit publicerad och kan kommas åt av alla!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Ange ett resurs-ID för otillåten-sidan.';
+
+$_lang['setting_upload_check_exists'] = 'Kontrollera om uppladdad fil redan finns';
+$_lang['setting_upload_check_exists_desc'] = 'När denna är aktiverad visas ett fel vid uppladdning av en fil om det redan finns en fil med samma namn. När den är inaktiverad kommer den befintliga filen att ersättas med den nya filen.';
 
 $_lang['setting_upload_files'] = 'Uppladdningsbara filtyper';
 $_lang['setting_upload_files_desc'] = 'Här kan du skriva en lista med de typer av filer som kan laddas upp till "assets/files/" med filhanteraren. Skriv i suffixen för filtyperna, separerade med kommatecken.';

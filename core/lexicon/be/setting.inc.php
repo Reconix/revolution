@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Калі дазволена, мапа
 $_lang['setting_cache_alias_map'] = 'Дазволіць кэшаванне карты псеўданімаў кантэксту';
 $_lang['setting_cache_alias_map_desc'] = 'Калі дазволена, усе URI рэсурсаў кэшуюцца ў кантэкст. Дазваляйце для невялікіх сайтаў і адключайце для вялікіх сайтаў для лепшай прадукцыйнасці.';
 
-$_lang['setting_use_context_resource_table'] = 'Выкарыстоўваць табліцу context_resource';
-$_lang['setting_use_context_resource_table_desc'] = 'Калі ўключана, падчас абнаўлення кантэксту будзе выкарыстоўвацца табліца context_resource. Гэта дазваляе праграмна мець адзін рэсурс у некалькіх кантэкстах адначасова. Калі вы не выкарыстоўваеце гэтыя рэсурсы ў мностве кантэкстаў праз API, можна задаць гэтае значэнне роўным false. На буйных сайтах вы можаце атрымаць патэнцыйны прырост прадукцыйнасці адмінкі.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Дазволіць кэшаванне налад кантэкстаў';
 $_lang['setting_cache_context_settings_desc'] = 'Калі дазволена, налады кантэкстаў будуць кэшавацца для паскарэння загрузкі старонак.';
@@ -415,8 +415,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Пароль для аўтэнтыфі�
 $_lang['setting_mail_smtp_port'] = 'SMTP Порт';
 $_lang['setting_mail_smtp_port_desc'] = 'Порт SMTP сервера па змаўчанні.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP прэфікс для злучэнняў';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Усталёўвае прэфікс злучэння. Даступныя варыянты: "", "ssl", "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'Дасылаць па аднаму для SMTP';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Дае магчымасць адпраўляць лісты адрасатам з поля "to" па аднаму, замест аднарозовай адпраўкі на ўсе адрасы.';
@@ -772,6 +775,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Вы жадаеце дазволіц
 $_lang['setting_unauthorized_page'] = 'Старонка памылкі 403 «Доступ забаронены»';
 $_lang['setting_unauthorized_page_desc'] = 'Калі ласка, пазначце ID рэсурсу, які вы жадаеце дасылаць карыстальнікам, калі яны запыталі забяспечаны або неаўтарызаваны рэсурс. <strong> ВАЖНА: пераканайцеся, што уведзены ID належыць існуючаму рэсурсу і гэты рэсурс апублікаваны і публічна даступны!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Калі ласка пазначце ID рэсурсу, які будзе з\'яўляцца старонкай памылкі 403 «Доступ забаронены».';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Дазволеныя да загрузкі тыпы файлаў';
 $_lang['setting_upload_files_desc'] = 'Тут вы можаце пазначыць спіс тыпаў файлаў, якія можна загружаць у каталог "assets/files/", выкарыстоўваючы дыспетчар файлаў. Калі ласка, увядзіце пашырэнні файлаў, падзяляючы іх коскамі.';

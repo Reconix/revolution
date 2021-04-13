@@ -45,7 +45,7 @@ class ElementSnippetUpdateManagerController extends modManagerController {
         $this->addJavascript($mgrUrl.'assets/modext/widgets/element/modx.panel.snippet.js');
         $this->addJavascript($mgrUrl.'assets/modext/sections/element/snippet/update.js');
         $this->addHtml('
-        <script type="text/javascript">
+        <script>
         // <![CDATA[
         MODx.onSnipFormRender = "'.$this->onSnipFormRender.'";
         MODx.perm.tree_show_element_ids = '.($this->modx->hasPermission('tree_show_element_ids') ? 1 : 0).';
@@ -99,7 +99,7 @@ class ElementSnippetUpdateManagerController extends modManagerController {
         $this->snippetArray = $this->snippet->toArray();
         $this->snippetArray['properties'] = $data;
         $this->snippetArray['snippet'] = $this->snippet->getContent();
-        if (strpos($this->snippetArray['snippet'],'<?php') === false) {
+        if (strpos(ltrim($this->snippetArray['snippet']),'<?php') !== 0) {
             $this->snippetArray['snippet'] = "<?php\n".$this->snippetArray['snippet'];
         }
 

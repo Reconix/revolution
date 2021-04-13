@@ -1,7 +1,7 @@
 <div id="tv-input-properties-form{$tv|default}"></div>
 {literal}
 
-<script type="text/javascript">
+<script>
 // <![CDATA[
 var params = {
 {/literal}{foreach from=$params key=k item=v name='p'}
@@ -87,6 +87,21 @@ MODx.load({
         xtype: MODx.expandHelp ? 'label' : 'hidden'
         ,forId: 'inopt_typeAheadDelay{/literal}{$tv|default}{literal}'
         ,html: _('typeahead_delay_desc')
+        ,cls: 'desc-under'
+    },{
+        xtype: 'combo-boolean'
+        ,fieldLabel: _('combo_forceselection')
+        ,description: MODx.expandHelp ? '' : _('combo_forceselection_desc')
+        ,name: 'inopt_forceSelection'
+        ,hiddenName: 'inopt_forceSelection'
+        ,id: 'inopt_forceSelection{/literal}{$tv|default}{literal}'
+        ,width: 200
+        ,value: (params['forceSelection']) ? !(params['forceSelection'] === 0 || params['forceSelection'] === 'false') : false
+        ,listeners: oc
+    },{
+        xtype: MODx.expandHelp ? 'label' : 'hidden'
+        ,forId: 'inopt_forceSelection{/literal}{$tv|default}{literal}'
+        ,html: _('combo_forceselection_multi_desc')
         ,cls: 'desc-under'
     },{
         xtype: 'textfield'

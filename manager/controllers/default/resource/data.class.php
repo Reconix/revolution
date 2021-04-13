@@ -39,7 +39,7 @@ class ResourceDataManagerController extends ResourceManagerController {
         $this->addJavascript($mgrUrl.'assets/modext/widgets/resource/modx.panel.resource.data.js');
         $this->addJavascript($mgrUrl.'assets/modext/sections/resource/data.js');
         $this->addHtml('
-        <script type="text/javascript">
+        <script>
         // <![CDATA[
         Ext.onReady(function() {
             MODx.ctx = "'.$this->resource->get('context_key').'";
@@ -49,7 +49,7 @@ class ResourceDataManagerController extends ResourceManagerController {
                     id: "'.$this->resource->get('id').'"
                     ,context_key: "'.$this->resource->get('context_key').'"
                     ,class_key: "'.$this->resource->get('class_key').'"
-                    ,pagetitle: "'.$this->resource->get('pagetitle').'"
+                    ,pagetitle: "'.htmlentities($this->resource->get('pagetitle'), ENT_QUOTES, 'UTF-8').'"
                     ,preview_url: "'.$this->previewUrl.'"
                 }
                 ,canEdit: "'.($this->modx->hasPermission('edit_document') ? 1 : 0).'"
@@ -107,7 +107,7 @@ class ResourceDataManagerController extends ResourceManagerController {
      * @return string
      */
     public function getPreviewUrl() {
-        $this->previewUrl = $this->modx->makeUrl($this->resource->get('id'),$this->resource->get('context_key'));
+        $this->previewUrl = $this->resource->getPreviewUrl();
         return $this->previewUrl;
     }
 

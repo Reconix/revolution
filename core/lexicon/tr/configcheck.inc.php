@@ -21,11 +21,17 @@ $_lang['configcheck_errorpage_unavailable_msg'] = 'Bunun anlamı, hata sayfanız
 $_lang['configcheck_errorpage_unpublished'] = 'Sitenizin hata sayfası yayınlanmamış veya mevcut değil.';
 $_lang['configcheck_errorpage_unpublished_msg'] = 'Bunun anlamı hata sayfanızın kamu tarafından erişilemediği. Sayfayı yayınlayın veya Sistem &gt; Sistem Ayarları menüsündeki site ağacınızdaki mevcut bir belgeye atandığından emin olun.';
 $_lang['configcheck_htaccess'] = 'Çekirdek klasöre web üzerinden erişilebilir';
-$_lang['configcheck_htaccess_msg'] = 'MODX senin çekirdek dosyanın(bir kısmına) dışarıdan erişilebildiğini fark etti.<strong>Bu önerilmez ve güvenlik riski taşır.</strong>
-MODX yüklemesi bir Aphace web sunucusunu üzerinde kuruluyor ise en azından çekirdek klasörünün <em>[[+fileLocation]]</em> içindeki .htaccess dosyasını ayarlamalısın.
-Bu kolay bir şekilde ht.access dosyasının ismini .htaccess olarak değiştirilerek ayarlanabilir.
-<p>Kullanabileceğiniz diğer yöntemler ve web sunucuları vardır. Lütfen sitenizin güvenliğini hakkında daha fazla bilgi almak için burayı okuyun <a href="https://rtfm.modx.com/revolution/2.x/administering-your-site/security/hardening-modx-revolution"> MODX Sertleştirme Rehberi</a>.</p>
-Eğer her şeyi düzgün bir şekilde ayarladıysanız, tarayıcınızdan <a href="[[+checkUrl]]" target="_blank">Changelog</a> girdiğinizde size 403(izin reddedildi) veya daha iyisi 404 (bulunamadı) karşınıza çıkacaktır. Eğer tarayıcınızda değişim günlüğü sayfasını görürseniz, birşeyler hala yanlış demektir ve bunu çözmek için tekrar ayarlamaya veya bir uzmana ihtiyacınız var.';
+$_lang['configcheck_htaccess_msg'] = '
+MODX, ana klasörünüzün (kısmen) genel erişime açık olduğunu tespit etti.
+<strong> Bu önerilmez ve bir güvenlik riski taşır. </strong>
+MODX kurulumunuz bir Apache web sunucusunda çalışıyorsa
+en azından .htaccess dosyasını <em> [[+ fileLocation]] </em> ana klasörünün içine kurmalısınız.
+Bu, mevcut ht.access örnek dosyasını .htaccess olarak yeniden adlandırarak kolayca yapılabilir.
+<p> Kullanabileceğiniz başka yöntemler ve web sunucuları da vardır, lütfen <a href="https://docs.modx.com/current/en/getting-started/maintenance/securing-modx"> Hardening MODX Kılavuzunu okuyun < / a>
+sitenizin güvenliğini sağlamayla ilgili daha fazla bilgi için. </p>
+Her şeyi doğru bir şekilde kurarsanız, ör. <a href="[[+checkUrl]]" target="_blank"> Değişiklik günlüğüne </a>
+size bir 403 (izin reddedildi) veya daha iyisi bir 404 (bulunamadı) vermelisiniz. Değişim günlüğünü görebiliyorsanız
+tarayıcıda hala yanlış bir şeyler var ve bunu çözmek için yeniden yapılandırmanız veya bir uzmanı aramanız gerekiyor.';
 $_lang['configcheck_images'] = 'Resimler dizini yazılabilir değil';
 $_lang['configcheck_images_msg'] = 'Resimler dizini yazılabilir değil, veya mevcut değil. Bu düzenleyicideki yönetici işlevleri çalışmayacak anlamına gelir!';
 $_lang['configcheck_installer'] = 'Yükleyici hala mevcut';

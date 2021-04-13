@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Indien ingeschakeld, acties (of contr
 $_lang['setting_cache_alias_map'] = 'Context Alias Map Cache inschakelen';
 $_lang['setting_cache_alias_map_desc'] = 'Indien ingeschakeld zullen alle Document URIs per context gecached worden. Bij grote (10.000+ documenten) websites kan er mogelijk verbeterde performance worden behaald door dit uit te zetten.';
 
-$_lang['setting_use_context_resource_table'] = 'Gebruik de context resource tabel';
-$_lang['setting_use_context_resource_table_desc'] = 'Schakel dit in om bij het verversen van contexten gebruik te maken van de context_resource tabel. Dit maakt het mogelijk om, via code, een resource in verschillende contexten te plaatsen. Als je een resource niet via de API in meerdere contexten plaatst, dan kan deze instelling uitgeschakeld worden. Dit kan bij grote sites op een snellere manager resulteren.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Context Instellingen Cache';
 $_lang['setting_cache_context_settings_desc'] = 'Indien ingeschakeld, context instellingen worden gecached om de laadtijd te bevorderen.';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Het wachtwoord voor de authenticatie vo
 $_lang['setting_mail_smtp_port'] = 'SMTP poort';
 $_lang['setting_mail_smtp_port_desc'] = 'Stel de standaard SMTP poort in.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP verbinding voorvoegsel';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Stel het voorvoegsel van de verbinding in. Mogelijk zijn "", "ssl" of "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Single To';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Biedt de mogelijkheid om e-mail berichten afzonderlijk te sturen in plaats van het versturen naar alle \'naar\' adressen.';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Wil je gebruikers toestaan om nieuwe
 $_lang['setting_unauthorized_page'] = 'Onbevoegde pagina';
 $_lang['setting_unauthorized_page_desc'] = 'Vul het ID in van het document waar je gebruikers naar toe wilt sturen als ze een beveiligde of onbevoegde pagina opvragen. <strong>Let op: controleer of dit document ID bestaat en gepubliceerd is en toegankelijk is voor deze gebruiker!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Vul een document ID in voor de onbevoegde pagina.';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Uploadbare bestandstypen';
 $_lang['setting_upload_files_desc'] = 'Hier kun je een lijst van bestandstypen invullen welke geupload kunnen worden in \'assets/files/\' bij gebruik van de document manager. Vul de extenties van de bestandstypen in gescheiden door een komma.';

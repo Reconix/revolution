@@ -224,8 +224,8 @@ class modX extends xPDO {
     public $sanitizePatterns = array(
         'scripts'       => '@<script[^>]*?>.*?</script>@si',
         'entities'      => '@&#(\d+);@',
-        'tags1'          => '@\[\[(.*?)\]\]@si',
-        'tags2'          => '@(\[\[|\]\])@si',
+        'tags1'         => '@\[\[(?:(?!(\[\[|\]\])).)*\]\]@si',
+        'tags2'         => '@(\[\[|\]\])@si',
     );
     /**
      * @var integer An integer representing the session state of modX.
@@ -339,7 +339,7 @@ class modX extends xPDO {
                         $iteration++;
                     }
                 }
-                if (get_magic_quotes_gpc()) {
+                if (version_compare(PHP_VERSION, '7.4.0', '<') && get_magic_quotes_gpc()) {
                     $target[$key]= stripslashes($value);
                 } else {
                     $target[$key]= $value;
@@ -447,7 +447,7 @@ class modX extends xPDO {
                 null,
                 null,
                 $options,
-                null
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT)
             );
             $this->setLogLevel($this->getOption('log_level', null, xPDO::LOG_LEVEL_ERROR));
             $this->setLogTarget($this->getOption('log_target', null, 'FILE'));
@@ -477,10 +477,10 @@ class modX extends xPDO {
      *
      * @param string $configPath An absolute path location to search for the modX config file.
      * @param array $data Data provided to initialize the instance with, overriding config file entries.
-     * @param null $driverOptions Driver options for the primary connection.
+     * @param array $driverOptions Driver options for the primary connection.
      * @return array The merged config data ready for use by the modX::__construct() method.
      */
-    protected function loadConfig($configPath = '', $data = array(), $driverOptions = null) {
+    protected function loadConfig($configPath = '', $data = array(), $driverOptions = array()) {
         if (!is_array($data)) $data = array();
         modX :: protect();
         if (!defined('MODX_CONFIG_KEY')) {
@@ -495,6 +495,8 @@ class modX extends xPDO {
             if (MODX_CONFIG_KEY !== 'config') $cachePath .= MODX_CONFIG_KEY . '/';
             if (!is_array($config_options)) $config_options = array();
             if (!is_array($driver_options)) $driver_options = array();
+            if (!is_array($driverOptions)) $driverOptions = array();
+            $driver_options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT) + $driverOptions + $driver_options;
             $data = array_merge(
                 array (
                     xPDO::OPT_CACHE_KEY => 'default',
@@ -675,7 +677,7 @@ class modX extends xPDO {
                 parent :: setDebug(false);
             }
             else {
-                $debug = (is_int($debug) ? $debug : defined($debug) ? intval(constant($debug)) : 0);
+                $debug = (is_int($debug) ? $debug : (defined($debug) ? intval(constant($debug)) : 0));
                 if ($debug) {
                     error_reporting($debug);
                     parent :: setLogLevel(xPDO::LOG_LEVEL_INFO);
@@ -1542,7 +1544,7 @@ class modX extends xPDO {
             } elseif (strpos(strtolower($src), "<script") !== false) {
                 $this->sjscripts[count($this->sjscripts)]= $src;
             } else {
-                $this->sjscripts[count($this->sjscripts)]= '<script type="text/javascript" src="' . $src . '"></script>';
+                $this->sjscripts[count($this->sjscripts)]= '<script src="' . $src . '"></script>';
             }
         }
     }
@@ -1565,7 +1567,7 @@ class modX extends xPDO {
         } elseif (strpos(strtolower($src), "<script") !== false) {
             $this->jscripts[count($this->jscripts)]= $src;
         } else {
-            $this->jscripts[count($this->jscripts)]= '<script type="text/javascript" src="' . $src . '"></script>';
+            $this->jscripts[count($this->jscripts)]= '<script src="' . $src . '"></script>';
         }
     }
 
@@ -2463,7 +2465,7 @@ class modX extends xPDO {
         }
         if ($initialized) {
             $this->setLogLevel($this->getOption('log_level', $options, xPDO::LOG_LEVEL_ERROR));
-                
+
             $logTarget = $this->getOption('log_target', $options, 'FILE', true);
             if ($logTarget === 'FILE') {
                 $options = array();
@@ -2478,7 +2480,7 @@ class modX extends xPDO {
             } else {
                 $this->setLogTarget($logTarget);
             }
-            
+
             $debug = $this->getOption('debug');
             if (!is_null($debug) && $debug !== '') {
                 $this->setDebug($debug);

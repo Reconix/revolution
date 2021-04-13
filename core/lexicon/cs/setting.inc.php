@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Je-li nastaveno "Ano", akce (nebo kon
 $_lang['setting_cache_alias_map'] = 'Povolit cache mapy aliasů v rámci kontextu';
 $_lang['setting_cache_alias_map_desc'] = 'Je-li nastaveno "Ano", URI všech dokumentů jsou ukládány do cache kontextu. Pro lepší výkon toto povolte na menších a zakažte na rozsáhlejších portálech.';
 
-$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
-$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Povolit cache nastavení kontextů';
 $_lang['setting_cache_context_settings_desc'] = 'Je-li nastaveno "Ano", kontextová nastavení budou ukládána do cache a tím se zkrátí doba načítání.';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Heslo pro autentizaci k SMTP serveru.';
 $_lang['setting_mail_smtp_port'] = 'SMTP port';
 $_lang['setting_mail_smtp_port_desc'] = 'Nastavení výchozího SMTP portu.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP prefix připojení';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Nastavení prefixu připojení. Možnosti jsou "", "ssl" nebo "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP šifrování';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Nastaví šifrování SMTP připojení. Možnosti jsou "", "ssl" nebo "tls".';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP automatické TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Automaticky povolit TLS šifrování, pokud jej server podporuje, i když "SMTP Encryption" není nastaveno na "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP jednotlivě';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Možnost odesílání e-mailových zpráv jednotlivě.';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Chcete uživatelům povolit vytvář
 $_lang['setting_unauthorized_page'] = 'Stránka neautorizovaného přístupu';
 $_lang['setting_unauthorized_page_desc'] = 'Zadejte ID zdroje, na který chcete přesměrovat uživatele pokud se pokusili přistoupit ke stránce, pro kterou nemají oprávnění. <strong>Poznámka: ujistěte se, že zadané ID patří existujícího zdroji, který je publikován a je přístupný veřejnosti!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Zadejte ID zdroje pro stránku neautorizovaného přístupu.';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Povolené typy souborů';
 $_lang['setting_upload_files_desc'] = 'Zde můžete zadat seznam souborů, které mohou být nahrávány do "assets/files/" pomocí správce souborů. Zadejte přípony souborů pro typy souborů oddělené čárkami.';

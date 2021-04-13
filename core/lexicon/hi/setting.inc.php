@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'जब सक्षम, actions (य�
 $_lang['setting_cache_alias_map'] = 'Context Alias Map कैश सक्षम करें';
 $_lang['setting_cache_alias_map_desc'] = 'सक्षम होने पर, सभी Resource URIs हैं कैश्ड के संदर्भ में। पर छोटे साइटों को सक्षम और बेहतर प्रदर्शन के लिए बड़ा साइटों पर अक्षम करें।';
 
-$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
-$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Context सेटिंग कैश सक्षम करें';
 $_lang['setting_cache_context_settings_desc'] = 'जब सक्षम, Context सेटिंग्स लोड समय को कम करने के लिए कैश्ड जाएगा।';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'SMTP के खिलाफ को प�
 $_lang['setting_mail_smtp_port'] = 'SMTP पोर्ट';
 $_lang['setting_mail_smtp_port_desc'] = 'डिफ़ॉल्ट SMTP सर्वर पोर्ट सेट करता है।';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP Connection Prefix';
-$_lang['setting_mail_smtp_prefix_desc'] = 'कनेक्शन उपसर्ग सेट करता है। विकल्प हैं "", "ssl" या "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Single To';
 $_lang['setting_mail_smtp_single_to_desc'] = 'बजाय पतों पर पूरे करने के लिए भेजने के लिए फील्ड प्रक्रिया व्यक्तिगत ईमेल करने की क्षमता प्रदान करता है।';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'क्या आप अपने use
 $_lang['setting_unauthorized_page'] = 'अनधिकृत पृष्ठ';
 $_lang['setting_unauthorized_page_desc'] = 'आप वे एक सुरक्षित है या अनधिकृत resource का अनुरोध किया है अगर करने के लिए users को भेजना चाहते resource का आईडी दर्ज करें। <strong> नोट: आप में प्रवेश आईडी एक मौजूदा resource के अंतर्गत आता है, और इसे प्रकाशित कर दिया गया है और सार्वजनिक रूप से सुलभ है सुनिश्चित करें </strong>';
 $_lang['setting_unauthorized_page_err'] = 'कृपया अनधिकृत पेज के लिए कोई resource ID निर्दिष्ट करें।';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Uploadable फ़ाइल प्रकार';
 $_lang['setting_upload_files_desc'] = 'यहाँ आप resource manager का उपयोग करते हुए \'assets/files/\' में अपलोड किया जा सकता है कि फाइलों की सूची में प्रवेश कर सकते हैं। अल्पविराम के द्वारा अलग filetypes के लिए एक्सटेंशन दर्ज करें।';

@@ -38,7 +38,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
      * @return boolean
      */
     public function initialize() {
-        parent::initialize();
+        $return = parent::initialize();
         $properties = $this->getPropertyList();
         if (!defined('AWS_KEY')) {
             define('AWS_KEY',$this->xpdo->getOption('key',$properties,''));
@@ -63,7 +63,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
 
         $this->setBucket($this->xpdo->getOption('bucket',$properties,''));
 
-        return true;
+        return $return;
     }
 
     /**
@@ -198,7 +198,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
             } else {
                 $url = rtrim($properties['url'],'/').'/'.$currentPath;
                 $url = str_replace(' ','%20',$url);
-                $page = '?a='.$editAction.'&file='.$currentPath.'&wctx='.$this->ctx->get('key').'&source='.$this->get('id');
+                $page = '?a='.$editAction.'&file='.rawurlencode($currentPath).'&wctx='.$this->ctx->get('key').'&source='.$this->get('id');
                 // $isBinary = $this->isBinary(rtrim($properties['url'],'/').'/'.$currentPath);
 
                 // $cls = array();
@@ -720,7 +720,9 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
      * @return boolean|string
      */
     public function updateObject($objectPath,$content) {
-        /* create empty file that acts as folder */
+        if (!$this->checkFiletype($objectPath)) {
+            return false;
+        }
         $created = $this->driver->create_object($this->bucket,$objectPath,array(
                  'body' => $content,
                  'acl' => AmazonS3::ACL_PUBLIC,
@@ -744,6 +746,9 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
      * @return boolean
      */
     public function removeObject($objectPath) {
+        if (!$this->checkFiletype($objectPath)) {
+            return false;
+        }
         if (!$this->driver->if_object_exists($this->bucket,$objectPath)) {
             $this->addError('file',$this->xpdo->lexicon('file_folder_err_ns').': '.$objectPath);
             return false;

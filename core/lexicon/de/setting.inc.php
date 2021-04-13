@@ -12,7 +12,7 @@ $_lang['area_caching'] = 'Caching';
 $_lang['area_core'] = 'Core-Code';
 $_lang['area_editor'] = 'Rich-Text-Editor';
 $_lang['area_file'] = 'Dateisystem';
-$_lang['area_filter'] = 'Nach Bereich filtern...';
+$_lang['area_filter'] = 'Nach Bereich filtern …';
 $_lang['area_furls'] = 'Suchmaschinenfreundliche URLs';
 $_lang['area_gateway'] = 'Gateway';
 $_lang['area_language'] = 'Lexikon und Sprache';
@@ -34,14 +34,14 @@ $_lang['key_desc'] = 'Der Schlüssel der Einstellung. Er ist in Ihren Inhalten �
 $_lang['name_desc'] = 'Ein Name für die Einstellung. Dies kann auch ein Lexikon-Eintrag basierend auf dem Schlüssel sein, der dem Format "setting_" + Schlüssel entspricht.';
 $_lang['namespace'] = 'Namensraum';
 $_lang['namespace_desc'] = 'Der Namensraum, mit dem diese Einstellung verbunden ist. Das Standard-Lexikon-Thema wird für diesen Namensraum geladen, wenn die Einstellungen eingelesen werden.';
-$_lang['namespace_filter'] = 'Nach Namensraum filtern...';
-$_lang['search_by_key'] = 'Nach Schlüssel suchen...';
+$_lang['namespace_filter'] = 'Nach Namensraum filtern …';
+$_lang['search_by_key'] = 'Nach Schlüssel suchen …';
 $_lang['setting_create'] = 'Neue Einstellung anlegen';
 $_lang['setting_err'] = 'Bitte überprüfen Sie Ihre Daten für die folgenden Felder: ';
 $_lang['setting_err_ae'] = 'Eine Einstellung mit diesem Schlüssel existiert bereits. Bitte geben Sie einen anderen Namen für den Schlüssel an.';
 $_lang['setting_err_nf'] = 'Einstellung nicht gefunden.';
 $_lang['setting_err_ns'] = 'Einstellung nicht angegeben';
-$_lang['setting_err_remove'] = 'Beim Versuch, die Einstellung zu löschen, ist ein Fehler aufgetreten.';
+$_lang['setting_err_remove'] = 'Beim Versuch, die Einstellung zu entfernen, ist ein Fehler aufgetreten.';
 $_lang['setting_err_save'] = 'Beim Versuch, die Einstellung zu speichern, ist ein Fehler aufgetreten.';
 $_lang['setting_err_startint'] = 'Schlüsselnamen von Einstellungen dürfen nicht mit einer Ziffer beginnen.';
 $_lang['setting_err_invalid_document'] = 'Es gibt kein Dokument mit der ID %d. Bitte geben Sie ein existierendes Dokument an.';
@@ -135,7 +135,7 @@ $_lang['setting_cache_action_map_desc'] = 'Wenn diese Einstellung auf "Ja" geset
 $_lang['setting_cache_alias_map'] = 'Kontext-Alias-Cache aktivieren';
 $_lang['setting_cache_alias_map_desc'] = 'Wenn diese Einstellung aktiviert ist, werden alle Ressourcen-URIs in den Kontext gecacht. Diese Einstellung sollte für kleinere Sites aktiviert und für größere Sites deaktiviert werden, um die Performance zu verbessern.';
 
-$_lang['setting_use_context_resource_table'] = 'Tabelle context_resource verwenden';
+$_lang['setting_use_context_resource_table'] = 'Verwende die Context-Ressourcen-Tabelle für Context-Cache-Aktualisierungen';
 $_lang['setting_use_context_resource_table_desc'] = 'Wenn diese Einstellung aktiviert ist, wird bei Kontext-Aktualisierungen die Tabelle context_resource verwendet. Dadurch sind Sie in der Lage, programmgesteuert eine Ressource mehreren Kontexten zuzuordnen. Wenn Sie diese Möglichkeit nicht mittels der API nutzen, können Sie diese Einstellung auf "Nein" stellen. Bei großen Websites werden Sie dadurch im Manager möglicherweise eine bessere Performance erreichen.';
 
 $_lang['setting_cache_context_settings'] = 'Kontext-Einstellungen-Cache aktivieren';
@@ -332,7 +332,7 @@ $_lang['setting_friendly_alias_restrict_chars_desc'] = 'Die Methode, die zur Ein
 $_lang['setting_friendly_alias_restrict_chars_pattern'] = 'Suchmaschinenfreundliche Aliasse: RegEx zur Einschränkung der erlaubten Zeichen';
 $_lang['setting_friendly_alias_restrict_chars_pattern_desc'] = 'Ein gültiger regulärer Ausdruck zur Einschränkung der in einem Ressourcen-Alias erlaubten Zeichen.';
 
-$_lang['setting_friendly_alias_strip_element_tags'] = 'Suchmaschinenfreundliche Aliasse: Element-Tags entfernen';
+$_lang['setting_friendly_alias_strip_element_tags'] = 'Suchmaschinenfreundliche Aliasse: Element-Tags löschen';
 $_lang['setting_friendly_alias_strip_element_tags_desc'] = 'Gibt an, ob Element-Tags aus Ressourcen-Aliassen entfernt werden sollen.';
 
 $_lang['setting_friendly_alias_translit'] = 'Transliteration suchmaschinenfreundlicher Aliasse';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Das Passwort zur Authentifizierung beim
 $_lang['setting_mail_smtp_port'] = 'SMTP-Port';
 $_lang['setting_mail_smtp_port_desc'] = 'Legt den Standard-SMTP-Port fest.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP-Verbindungs-Präfix';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Legt den Verbindungs-Präfix fest. Möglich sind "", "ssl" oder "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP-Verschlüsselung';
+$_lang['setting_mail_smtp_prefix_desc'] = ' Legt die Verschlüsselung der SMTP-Verbindung fest. Mögliche Werte sind "", "ssl" oder "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'TLS-Verschlüsselung automatisch aktivieren, wenn ein Server dies unterstützt, auch wenn die "SMTP-Verschlüsselung" nicht auf "tls" eingestellt ist.';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP: Mails einzeln versenden';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Wird diese Einstellung auf "Ja" gesetzt, werden Mails an jeden Empfänger einzeln versendet, anderenfalls wird eine einzige Mail versendet, bei der alle Empfänger im entsprechenden Adressfeld stehen.';
@@ -690,7 +693,7 @@ $_lang['setting_send_poweredby_header'] = 'Sende X-Powered-By-Header';
 $_lang['setting_send_poweredby_header_desc'] = 'Wenn diese Option aktiviert ist, sendet MODX den "X-Powered-By"-Header, um diese Site als auf MODX basierend zu kennzeichnen. Dies hilft dabei, die Ermittlung der globalen MODX-Nutzung durch externe Tracker, die Ihre Site inspizieren, zu ermöglichen. Da dies erleichtert, zu erkennen, auf welchem System Ihre Site basiert, könnte dies ein leicht erhöhtes Sicherheitsrisiko darstellen, wenn eine Sicherheitslücke in MODX gefunden wird.';
 
 $_lang['setting_show_tv_categories_header'] = 'Reiter-Überschrift "Kategorien" für TVs anzeigen';
-$_lang['setting_show_tv_categories_header_desc'] = 'Wenn diese Einstellung auf "Ja" gesetzt wurde, zeigt MODX die Überschrift "Kategorien" über dem ersten Kategorien-Reiter an, wenn Template-Variablen in einer Ressource bearbeitet werden.';
+$_lang['setting_show_tv_categories_header_desc'] = 'Wenn diese Einstellung auf "Ja" gesetzt wurde, zeigt MODX die Überschrift "Kategorien" über dem ersten Kategorien-Reiter an, wenn TVs in einer Ressource bearbeitet werden.';
 
 $_lang['setting_signupemail_message'] = 'E-Mail nach Account-Erstellung';
 $_lang['setting_signupemail_message_desc'] = 'Hier können Sie die Nachricht eingeben, die an einen Benutzer gesendet wird, wenn Sie einen Account für ihn erstellen und MODX ihm eine E-Mail senden lassen, die seinen Benutzernamen und sein Passwort enthält.<br /><strong>Hinweis:</strong> Die folgenden Platzhalter werden vom System ersetzt, wenn die Nachricht versendet wird:<br /><br />[[+sname]] - Name Ihrer Website,<br />[[+saddr]] - E-Mail-Adresse ihrer Website (bzw. des Webmasters),<br />[[+surl]] - URL Ihrer Website,<br />[[+uid]] - Benutzername oder ID des Benutzers,<br />[[+pwd]] - Passwort des Benutzers,<br />[[+ufn]] - Vollständiger Name des Benutzers.<br /><br /><strong>Achten Sie darauf, dass zumindest [[+uid]] und [[+pwd]] in der E-Mail enthalten sind, da sonst der Benutzername und das Passwort nicht mit der Mail versendet werden und Ihre Benutzer folglich ihre Zugangsdaten nicht kennen!</strong>';
@@ -716,19 +719,19 @@ $_lang['setting_site_unavailable_page_desc'] = 'Geben Sie die ID der Ressource e
 $_lang['setting_site_unavailable_page_err'] = 'Bitte geben Sie die Ressourcen-ID für die Website-Offline-Seite an.';
 
 $_lang['setting_static_elements_automate_templates'] = 'Statische Elemente für Templates automatisieren?';
-$_lang['setting_static_elements_automate_templates_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Templates, z. B. das Erstellen und Entfernen von statischen Dateien, automatisieren.';
+$_lang['setting_static_elements_automate_templates_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Templates, z. B. das Erstellen und Löschen von statischen Dateien, automatisieren.';
 
 $_lang['setting_static_elements_automate_tvs'] = 'Statische Elemente für Template-Variablen automatisieren?';
-$_lang['setting_static_elements_automate_tvs_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Template-Variablen, z. B. das Erstellen und Entfernen von statischen Dateien, automatisieren.';
+$_lang['setting_static_elements_automate_tvs_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Template-Variablen, z. B. das Erstellen und Löschen von statischen Dateien, automatisieren.';
 
 $_lang['setting_static_elements_automate_chunks'] = 'Statische Elemente für Chunks automatisieren?';
-$_lang['setting_static_elements_automate_chunks_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Chunks, z. B. das Erstellen und Entfernen von statischen Dateien, automatisieren.';
+$_lang['setting_static_elements_automate_chunks_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Chunks, z. B. das Erstellen und Löschen von statischen Dateien, automatisieren.';
 
 $_lang['setting_static_elements_automate_snippets'] = 'Statische Elemente für Snippets automatisieren?';
-$_lang['setting_static_elements_automate_snippets_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Snippets, z. B. das Erstellen und Entfernen von statischen Dateien, automatisieren.';
+$_lang['setting_static_elements_automate_snippets_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Snippets, z. B. das Erstellen und Löschen von statischen Dateien, automatisieren.';
 
 $_lang['setting_static_elements_automate_plugins'] = 'Statische Elemente für Plugins automatisieren?';
-$_lang['setting_static_elements_automate_plugins_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Plugins, z. B. das Erstellen und Entfernen von statischen Dateien, automatisieren.';
+$_lang['setting_static_elements_automate_plugins_desc'] = 'Dies wird das Verarbeiten von statischen Dateien für Plugins, z. B. das Erstellen und Löschen von statischen Dateien, automatisieren.';
 
 $_lang['setting_static_elements_default_mediasource'] = 'Standard Medienquelle für statische Elemente';
 $_lang['setting_static_elements_default_mediasource_desc'] = 'Geben Sie die standardmäßige Medienquelle an, in der die statischen Elementen gespeichert werden.';
@@ -758,7 +761,7 @@ $_lang['setting_tree_default_sort_desc'] = 'Das Feld, nach dem der Ressourcen-Ba
 $_lang['setting_tree_root_id'] = 'Ressourcen-Baum-Basis-ID';
 $_lang['setting_tree_root_id_desc'] = 'Geben Sie hier eine gültige ID einer Ressource ein, um den Ressourcen-Baum links bei dieser Ressource als Basis beginnen zu lassen. Benutzer können dann nur Ressourcen sehen, die Kinder der angegebenen Ressource sind.';
 
-$_lang['setting_tvs_below_content'] = 'Template-Variablen unter den Inhalt verschieben';
+$_lang['setting_tvs_below_content'] = 'TVs unter den Inhalt verschieben';
 $_lang['setting_tvs_below_content_desc'] = 'Setzen Sie diese Einstellung auf "Ja", um Template-Variablen beim Bearbeiten von Ressourcen unter das Eingabefeld für den Inhalt zu verschieben.';
 
 $_lang['setting_ui_debug_mode'] = 'Benutzerschnittstellen-Debug-Modus';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Möchten Sie Ihren Benutzern erlaube
 $_lang['setting_unauthorized_page'] = 'Seite für unautorisierte Zugriffe';
 $_lang['setting_unauthorized_page_desc'] = 'Geben Sie die ID der Ressource ein, die angezeigt werden soll, wenn eine geschützte Ressource aufgerufen wurde oder eine, für die dem Benutzer die Berechtigung fehlt. <strong>ACHTUNG: Stellen Sie sicher, dass die ID, die Sie eingeben, zu einer existierenden Ressource gehört, dass diese veröffentlicht wurde und öffentlich zugänglich ist!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Bitte geben Sie eine Ressourcen-ID für die Seite für unautorisierte Zugriffe ein.';
+
+$_lang['setting_upload_check_exists'] = 'Überprüfen, ob die hochgeladene Datei existiert';
+$_lang['setting_upload_check_exists_desc'] = 'Wenn diese Einstellung aktiviert ist, wird ein Fehler beim Hochladen einer Datei mit gleichem Namen angezeigt. Wenn sie deaktiviert ist, wird die vorhandene Datei ohne Nachfrage durch die neue Datei ersetzt.';
 
 $_lang['setting_upload_files'] = 'Hochladbare Dateitypen';
 $_lang['setting_upload_files_desc'] = 'Hier können Sie eine Liste von Dateitypen eingeben, die über den Ressourcen-Manager in das Verzeichnis assets/files/ hochgeladen werden können. Bitte geben Sie die Dateiendungen der Dateitypen ein, durch Kommata getrennt.';

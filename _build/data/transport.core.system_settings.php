@@ -126,7 +126,7 @@ $settings['automatic_template_assignment']->fromArray(array (
 $settings['base_help_url']= $xpdo->newObject('modSystemSetting');
 $settings['base_help_url']->fromArray(array (
   'key' => 'base_help_url',
-  'value' => '//docs.modx.com/display/revolution20/',
+  'value' => '//docs.modx.com/help/',
   'xtype' => 'textfield',
   'namespace' => 'core',
   'area' => 'manager',
@@ -967,6 +967,15 @@ $settings['mail_smtp_prefix']->fromArray(array (
   'key' => 'mail_smtp_prefix',
   'value' => '',
   'xtype' => 'textfield',
+  'namespace' => 'core',
+  'area' => 'mail',
+  'editedon' => null,
+), '', true, true);
+$settings['mail_smtp_autotls']= $xpdo->newObject('modSystemSetting');
+$settings['mail_smtp_autotls']->fromArray(array (
+  'key' => 'mail_smtp_autotls',
+  'value' => true,
+  'xtype' => 'combo-boolean',
   'namespace' => 'core',
   'area' => 'mail',
   'editedon' => null,
@@ -1901,10 +1910,19 @@ $settings['unauthorized_page']->fromArray(array (
   'area' => 'site',
   'editedon' => null,
 ), '', true, true);
+$settings['upload_check_exists']= $xpdo->newObject('modSystemSetting');
+$settings['upload_check_exists']->fromArray(array (
+  'key' => 'upload_check_exists',
+  'value' => '1',
+  'xtype' => 'combo-boolean',
+  'namespace' => 'core',
+  'area' => 'file',
+  'editedon' => null,
+), '', true, true);
 $settings['upload_files']= $xpdo->newObject('modSystemSetting');
 $settings['upload_files']->fromArray(array (
   'key' => 'upload_files',
-  'value' => 'txt,html,htm,xml,js,css,zip,gz,rar,z,tgz,tar,mp3,mp4,aac,wav,au,wmv,avi,mpg,mpeg,pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,jpeg,png,tiff,svg,svgz,gif,psd,ico,bmp,odt,ods,odp,odb,odg,odf,md,ttf,woff,eot,scss,less,css.map',
+  'value' => 'txt,html,htm,xml,js,js.map,css,scss,less,css.map,zip,gz,rar,z,tgz,tar,mp3,mp4,aac,wav,au,wmv,avi,mpg,mpeg,pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,jpeg,png,tiff,svg,svgz,gif,psd,ico,bmp,webp,odt,ods,odp,odb,odg,odf,md,ttf,woff,woff2,eot',
   'xtype' => 'textfield',
   'namespace' => 'core',
   'area' => 'file',
@@ -1922,7 +1940,7 @@ $settings['upload_flash']->fromArray(array (
 $settings['upload_images']= $xpdo->newObject('modSystemSetting');
 $settings['upload_images']->fromArray(array (
   'key' => 'upload_images',
-  'value' => 'jpg,jpeg,png,gif,psd,ico,bmp,tiff,svg,svgz',
+  'value' => 'jpg,jpeg,png,gif,psd,ico,bmp,tiff,svg,svgz,webp',
   'xtype' => 'textfield',
   'namespace' => 'core',
   'area' => 'file',
@@ -2044,7 +2062,7 @@ $settings['welcome_screen']->fromArray(array (
 $settings['welcome_screen_url']= $xpdo->newObject('modSystemSetting');
 $settings['welcome_screen_url']->fromArray(array (
   'key' => 'welcome_screen_url',
-  'value' => '//misc.modx.com/revolution/welcome.27.html ',
+  'value' => '//misc.modx.com/revolution/welcome.28.html',
   'xtype' => 'textfield',
   'namespace' => 'core',
   'area' => 'manager',

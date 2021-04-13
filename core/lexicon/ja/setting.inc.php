@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = '「はい」を選択すると、ア�
 $_lang['setting_cache_alias_map'] = 'コンテキストのエイリアスマップキャッシュを有効';
 $_lang['setting_cache_alias_map_desc'] = '有効にすると、すべてのリソースのURIは、コンテキストにキャッシュされます。小規模なサイトで有効にして、パフォーマンスを向上させるために大規模なサイトでは無効にします。';
 
-$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
-$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'コンテキスト設定キャッシュを有効';
 $_lang['setting_cache_context_settings_desc'] = '「はい」を選択すると、コンテキストの設定をキャッシュして、読み込み時間を減らします。';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'SMTP認証で用いるパスワード�
 $_lang['setting_mail_smtp_port'] = 'SMTPのポート';
 $_lang['setting_mail_smtp_port_desc'] = 'SMTPサーバーのデフォルトポート番号を指定します。';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP接続の接頭辞';
-$_lang['setting_mail_smtp_prefix_desc'] = '接続の接頭辞を "", "ssl" または "tls" から指定します。';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Single To';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Provides the ability to have the TO field process individual emails, instead of sending to entire TO addresses.';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'サイトのルートディレクト
 $_lang['setting_unauthorized_page'] = '権限外告知のページ';
 $_lang['setting_unauthorized_page_desc'] = 'ユーザーがアクセスを許可されていないドキュメントを要求したとき表示するドキュメントのIDを入力してください。<br /><strong>注意: 実在するドキュメントのIDを指定してください。また公開中でしかもPublicなアクセスが可能であるものに限ります</strong>';
 $_lang['setting_unauthorized_page_err'] = '権限外告知に利用するドキュメントIDを指定してください。';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'アップロード可能なファイルタイプ';
 $_lang['setting_upload_files_desc'] = 'ファイルブラウザを使用して「assets/files/」にアップロードできるメディアファイルの拡張子をカンマで区切って入力してください。';

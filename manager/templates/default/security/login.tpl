@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" {if $_config.manager_direction EQ 'rtl'}dir="rtl"{/if} lang="{$_config.manager_lang_attribute}" xml:lang="{$_config.manager_lang_attribute}">
+<!doctype html>
+<html {if $_config.manager_direction EQ 'rtl'}dir="rtl"{/if} lang="{$_config.manager_lang_attribute}" xml:lang="{$_config.manager_lang_attribute}">
 <head>
     <title>{$_lang.login_title} | {$_config.site_name|strip_tags|escape}</title>
     <meta http-equiv="Content-Type" content="text/html; charset={$_config.modx_charset}" />
@@ -11,19 +11,19 @@
     <link rel="stylesheet" type="text/css" href="{$_config.manager_url}templates/default/css/login{if $_config.compress_css}-min{/if}.css" />
 
 {if isset($_config.ext_debug) && $_config.ext_debug}
-    <script src="{$_config.manager_url}assets/ext3/adapter/ext/ext-base-debug.js" type="text/javascript"></script>
-    <script src="{$_config.manager_url}assets/ext3/ext-all-debug.js" type="text/javascript"></script>
+    <script src="{$_config.manager_url}assets/ext3/adapter/ext/ext-base-debug.js"></script>
+    <script src="{$_config.manager_url}assets/ext3/ext-all-debug.js"></script>
 {else}
-    <script src="{$_config.manager_url}assets/ext3/adapter/ext/ext-base.js" type="text/javascript"></script>
-    <script src="{$_config.manager_url}assets/ext3/ext-all.js" type="text/javascript"></script>
+    <script src="{$_config.manager_url}assets/ext3/adapter/ext/ext-base.js"></script>
+    <script src="{$_config.manager_url}assets/ext3/ext-all.js"></script>
 {/if}
-    <script src="assets/modext/core/modx.js" type="text/javascript"></script>
+    <script src="assets/modext/core/modx.js"></script>
 
-    <script src="assets/modext/core/modx.component.js" type="text/javascript"></script>
-    <script src="assets/modext/util/utilities.js" type="text/javascript"></script>
-    <script src="assets/modext/widgets/core/modx.panel.js" type="text/javascript"></script>
-    <script src="assets/modext/widgets/core/modx.window.js" type="text/javascript"></script>
-    <script src="assets/modext/sections/login.js" type="text/javascript"></script>
+    <script src="assets/modext/core/modx.component.js"></script>
+    <script src="assets/modext/util/utilities.js"></script>
+    <script src="assets/modext/widgets/core/modx.panel.js"></script>
+    <script src="assets/modext/widgets/core/modx.window.js"></script>
+    <script src="assets/modext/sections/login.js"></script>
 
     <meta name="robots" content="noindex, nofollow" />
 </head>
@@ -34,8 +34,7 @@
 
 <div id="container">
     <div id="modx-login-logo">
-        <!--[if gte IE 9]><!--><img alt="MODX CMS/CMF" src="{$_config.manager_url}templates/default/images/modx-logo-color.svg" data-fallback="{$_config.manager_url}templates/default/images/modx-logo-color.png" onerror="this.src=this.getAttribute('data-fallback');this.onerror=null;" /><!--<![endif]-->
-        <!--[if lt IE 9]><img alt="MODX CMS/CMF" src="{$_config.manager_url}templates/default/images/modx-logo-color.png" /><![endif]-->
+        <img alt="MODX CMS/CMF" src="{$_config.manager_url}templates/default/images/modx-logo-color.svg" />
     </div>
 
     <div id="modx-panel-login-div" class="x-panel modx-form x-form-label-right">
@@ -49,9 +48,9 @@
                     <div class="x-panel-body x-panel-body-noheader">
                         <h2>{$_config.site_name|strip_tags|escape}</h2>
                         <br class="clear" />
-                        {if $error_message}
+                        {if isset($error_message) && $error_message}
                             <p class="error">{$error_message|default}</p>
-                        {elseif $success_message}
+                        {elseif isset($success_message) && $success_message}
                             <p class="success">{$success_message|default}</p>
                         {/if}
                     </div>

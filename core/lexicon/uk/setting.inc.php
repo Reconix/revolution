@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Якщо встановлено "Та
 $_lang['setting_cache_alias_map'] = 'Увімкнути кешування карти псевдонімів контексту';
 $_lang['setting_cache_alias_map_desc'] = 'Якщо увімкнено, усі URI ресурсів кешуватимуться до контексту. Вмикайте для невеличких сайтів і вимикайте для великих сайтів для збільшення продуктивності.';
 
-$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
-$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Enable Context Setting Cache';
 $_lang['setting_cache_context_settings_desc'] = 'When enabled, context settings will be cached to reduce load times.';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'The password to authenticate to SMTP ag
 $_lang['setting_mail_smtp_port'] = 'SMTP Port';
 $_lang['setting_mail_smtp_port_desc'] = 'Sets the default SMTP server port.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP Connection Prefix';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Sets connection prefix. Options are "", "ssl" or "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP шифрування';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Встановлює шифрування для SMTP з\'єднання. Налаштування "", "ssl" або "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Чи вмикати шифрування TLS автоматично, якщо сервер підтримує його, навіть якщо "SMTP шифрування" не встановлено на "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Single To';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Provides the ability to have the TO field process individual emails, instead of sending to entire TO addresses.';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Чи хочете Ви дозвол�
 $_lang['setting_unauthorized_page'] = 'Unauthorized page';
 $_lang['setting_unauthorized_page_desc'] = 'Enter the ID of the Resource you want to send users to if they have requested a secured or unauthorized Resource. <strong>NOTE: Make sure the ID you enter belongs to an existing Resource, and that it has been published and is publicly accessible!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Please specify a Resource ID for the unauthorized page.';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Uploadable File Types';
 $_lang['setting_upload_files_desc'] = 'Here you can enter a list of files that can be uploaded into \'assets/files/\' using the Resource Manager. Please enter the extensions for the filetypes, seperated by commas.';

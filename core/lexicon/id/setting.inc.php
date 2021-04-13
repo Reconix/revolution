@@ -135,8 +135,8 @@ $_lang['setting_cache_action_map_desc'] = 'Bila diaktifkan, tindakan (atau peta 
 $_lang['setting_cache_alias_map'] = 'Mengaktifkan cache konteks Alias peta';
 $_lang['setting_cache_alias_map_desc'] = 'Ketika diaktifkan, Semua URI sumber daya cache ke dalam konteks. Mengaktifkan situs yang lebih kecil dan menonaktifkan pada situs yang lebih besar untuk kinerja yang lebih baik.';
 
-$_lang['setting_use_context_resource_table'] = 'Gunakan tabel sumber konteks';
-$_lang['setting_use_context_resource_table_desc'] = 'Bila diaktifkan, penyegaran konteks menggunakan tabel context_resource. Ini memungkinkan Anda memprogram memiliki satu sumber dalam beberapa konteks. Jika Anda tidak menggunakan beberapa konteks sumber daya melalui API, Anda dapat menyetel ini ke false. Di situs besar Anda akan mendapatkan potensi peningkatan kinerja manajer saat itu.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'Mengaktifkan konteks pengaturan Cache';
 $_lang['setting_cache_context_settings_desc'] = 'Bila diaktifkan, pengaturan konteks akan di-cache untuk mengurangi beban.';
@@ -414,8 +414,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Password untuk melakukan otentikasi ke 
 $_lang['setting_mail_smtp_port'] = 'SMTP Port';
 $_lang['setting_mail_smtp_port_desc'] = 'Menetapkan default SMTP server port.';
 
-$_lang['setting_mail_smtp_prefix'] = 'Awalan koneksi SMTP';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Set sambungan awalan. Pilihan "", "ssl" atau "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP tunggal untuk';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Menyediakan kemampuan untuk memiliki untuk bidang proses individu email, bukan pengiriman ke seluruh alamat.';
@@ -770,6 +773,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'Do you want to allow your users to c
 $_lang['setting_unauthorized_page'] = 'Unauthorized page';
 $_lang['setting_unauthorized_page_desc'] = 'Masukkan Sumber ID yang ingin Anda kirimi pengguna jika mereka meminta Sumber yang aman atau tidak sah. <strong>CATATAN: Pastikan ID yang Anda masukkan milik sumber yang ada, dan itu telah dipublikasikan dan dapat diakses publik!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'Silakan tentukan ID Sumber daya untuk halaman yang tidak sah.';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'Jenis berkas yang dapat diunggah';
 $_lang['setting_upload_files_desc'] = 'Di sini Anda bisa memasukkan daftar berkas yang bisa diunggah ke \'assets/files/\' menggunakan Resource Manager. Harap masukkan ekstensi untuk tipe berkas, dipisahkan dengan koma.';

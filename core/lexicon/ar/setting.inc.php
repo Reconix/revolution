@@ -137,8 +137,8 @@ $_lang['setting_cache_action_map_desc'] = 'عند التفعيل، سيتم تخ
 $_lang['setting_cache_alias_map'] = 'تمكين ذاكرة التخزين المؤقت لخريطة السياقات المستعارة';
 $_lang['setting_cache_alias_map_desc'] = 'عند التفعيل، سيتم تخزين كل URIs المصدر بشكل مؤقت في السياق. لأداء أفضل فعل في المواقع الأصغر وعطل في المواقع الأكبر.';
 
-$_lang['setting_use_context_resource_table'] = 'Use the context resource table';
-$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
+$_lang['setting_use_context_resource_table'] = 'Use the context resource table for context cache refreshes';
+$_lang['setting_use_context_resource_table_desc'] = 'When enabled, context cache refreshes use the context_resource table. This enables you to programmatically have one resource in multiple contexts. If you do not use those multiple resource contexts via the API, you can set this to false. On large sites you will get a potential performance boost in the manager then.';
 
 $_lang['setting_cache_context_settings'] = 'تفعيل الذاكرة المؤقتة لإعداد السياق';
 $_lang['setting_cache_context_settings_desc'] = 'عند التفعيل، إعدادات السياق سوف يتم حفظها بالذاكرة المؤقتة لتقليل عدد عمليات التحميل.';
@@ -419,8 +419,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'كلمة المرور للمصادقة 
 $_lang['setting_mail_smtp_port'] = 'منفذ SMTP';
 $_lang['setting_mail_smtp_port_desc'] = 'ضبط منفذ المخدم SMTP الافتراضي.';
 
-$_lang['setting_mail_smtp_prefix'] = 'بادئة اتصال SMTP';
-$_lang['setting_mail_smtp_prefix_desc'] = 'ضبط بادئة الاتصال. الخيارات هي ""،"ssl" أو "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP Encryption';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Sets the encryption of the SMTP connection. Options are "", "ssl" or "tls"';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP Auto TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Whether to enable TLS encryption automatically if a server supports it, even if "SMTP Encryption" is not set to "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP Single To';
 $_lang['setting_mail_smtp_single_to_desc'] = 'يوفر قدرة الحصول على معالجة الحقل TO لرسائل البريد الإلكتروني المستقلة، بدلا من الإرسال إلى كل العناوين TO.';
@@ -775,6 +778,9 @@ $_lang['setting_udperms_allowroot_desc'] = 'هل تريد أن تسمح للمس
 $_lang['setting_unauthorized_page'] = 'صفحة غير مصرح بها';
 $_lang['setting_unauthorized_page_desc'] = 'أدخل معرف المصدر الذي تريد أن ترسل إليه المستخدمين إذا قاموا بطلب مصدر غير مؤمن أو غير مصرح به. <strong>ملاحظة: تأكد من أن المعرف الذي أدخلته ينتمي إلى مصدر موجود، وأنه منشور مسبقا وقابل للوصول بشكل عام!</strong>';
 $_lang['setting_unauthorized_page_err'] = 'الرجاء تحديد معرف مصدر للصفحة الغير مصرح بها.';
+
+$_lang['setting_upload_check_exists'] = 'Check if uploaded file exists';
+$_lang['setting_upload_check_exists_desc'] = 'When enabled an error will be shown when uploading a file that already exists with the same name. When disabled, the existing file will be quietly replaced with the new file.';
 
 $_lang['setting_upload_files'] = 'أنواع ملفات قابلة للرفع';
 $_lang['setting_upload_files_desc'] = 'هنا يمكنك إدخال قائمة من الملفات التي يمكن أن ترفع إلى \'assets/files/\' باستخدام مدير المصدر. الرجاء إدخال الامتدادات لأنواع الملفات، مفصولة بفواصل.';

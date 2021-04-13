@@ -1,7 +1,7 @@
 <div id="tv-input-properties-form{$tv|default}"></div>
 {literal}
 
-<script type="text/javascript">
+<script>
 // <![CDATA[
 var params = {
 {/literal}{foreach from=$params key=k item=v name='p'}
@@ -22,7 +22,22 @@ MODx.load({
     ,cls: 'form-with-labels'
     ,labelAlign: 'top'
     ,border: false
-    ,items: []
+    ,items: [{
+        xtype: 'combo-boolean'
+        ,fieldLabel: _('required')
+        ,description: MODx.expandHelp ? '' : _('required_desc')
+        ,name: 'inopt_allowBlank'
+        ,hiddenName: 'inopt_allowBlank'
+        ,id: 'inopt_allowBlank{/literal}{$tv|default}{literal}'
+        ,width: 200
+        ,value: (params['allowBlank']) ? !(params['allowBlank'] === 0 || params['allowBlank'] === 'false') : true
+        ,listeners: oc
+    },{
+        xtype: MODx.expandHelp ? 'label' : 'hidden'
+        ,forId: 'inopt_allowBlank{/literal}{$tv|default}{literal}'
+        ,html: _('required_desc')
+        ,cls: 'desc-under'
+    }]
     ,renderTo: 'tv-input-properties-form{/literal}{$tv|default}{literal}'
 });
 // ]]>

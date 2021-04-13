@@ -21,9 +21,11 @@ $_lang['configcheck_errorpage_unavailable_msg'] = 'Dit betekent dat jouw foutpag
 $_lang['configcheck_errorpage_unpublished'] = 'De site\'s foutpagina is niet gepubliceerd of bestaat niet.';
 $_lang['configcheck_errorpage_unpublished_msg'] = 'Dit betekent dat jouw foutpagina niet bereikbaar is voor bezoekers. Publiceer de pagina of controleer of het is gekoppeld aan een bestaand document in jouw site structuur in het Systeem > Systeeminstellingen menu.';
 $_lang['configcheck_htaccess'] = 'Core map is toegankelijk op het web';
-$_lang['configcheck_htaccess_msg'] = '<p>MODX heeft geconstateerd dat uw core map (gedeeltelijk) voor het publiek toegankelijk is. <strong>Dit is niet aanbevolen en kan een beveiligingsrisico met zich mee brengen.</strong> Indien de MODX installatie op Apache draait is het mogelijk om het meegeleverde .htaccess bestand in <em>[[+fileLocation]]</em> te gebruiken om toegang tot de core map te weren. Dit is eenvoudig te doen door het <code>ht.access</code> bestand te hernoemen naar <code>.htaccess</code>. </p>
-<p>Voor andere methoden en webservers kan de <a href="https://rtfm.modx.com/revolution/2.x/administering-your-site/security/hardening-modx-revolution">Hardening MODX Guide</a> geraadpleegd worden (Engels). </p>
-<p>Indien alles succesvol is ingesteld zou bij het opvragen van bijvoorbeeld het <a href="[[+checkUrl]]" target="new">Changelog</a> een 403 (permission denied) of 404 (pagina niet gevonden) foutmelding moeten geven. Als de changelog toch op te vragen is, dan dienen verdere stappen genomen te worden om het probleem te verhelpen.';
+$_lang['configcheck_htaccess_msg'] = 'MODX heeft geconstateerd dat uw core map (gedeeltelijk) voor het publiek toegankelijk is.
+<strong>Dit is niet aanbevolen en kan een beveiligingsrisico met zich mee brengen.</strong> 
+Indien de MODX installatie op Apache draait is het mogelijk om het meegeleverde .htaccess bestand in <em>[[+fileLocation]]</em> te gebruiken om toegang tot de core map te weren. Dit is eenvoudig te doen door het ht.access bestand te hernoemen naar .htaccess.
+<p>Voor andere methoden en webservers kan de <a href="https://docs.modx.com/current/en/getting-started/maintenance/securing-modx">Hardening MODX Guide</a> geraadpleegd worden (Engels). </p>
+Indien alles succesvol is ingesteld zou bij het opvragen van bijvoorbeeld het <a href="[[+checkUrl]]" target="_blank">Changelog</a> een 403 (toegang geweigerd) of 404 (pagina niet gevonden) foutmelding moeten geven. Als de changelog toch op te vragen is, dan dienen verdere stappen genomen te worden om het probleem te verhelpen.';
 $_lang['configcheck_images'] = 'Afbeeldingen map is niet schrijfbaar';
 $_lang['configcheck_images_msg'] = 'De afbeeldingen map is niet schrijfbaar of bestaat niet. Dit betekent dat Afbeeldingenbeheer functionaliteiten in de editor niet werken!';
 $_lang['configcheck_installer'] = 'Installatie is nog aanwezig';
